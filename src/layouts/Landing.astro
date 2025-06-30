@@ -1,0 +1,34 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  mainClass?: string;
+}
+
+const { title, description, mainClass = "" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fffcf1" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/filou-logo.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-gray-50 min-h-screen">
+    <div class="w-full min-h-screen flex flex-col">
+      <main class={`flex-1 w-full px-2 sm:px-4 md:px-8 lg:px-0 ${mainClass}`}>
+        <slot />
+      </main>
+    </div>
+  </body>
+</html> 

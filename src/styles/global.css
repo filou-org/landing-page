@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* Couleurs personnalisées Filou */
+@layer base {
+  :root {
+    --color-filou-green: #10b981;
+    --color-filou-orange: #f97316;
+    --color-filou-orange-dark: #ea580c;
+    --color-filou-teal: #14b8a6;
+    --color-filou-teal-dark: #0d9488;
+  }
+}
+
+@layer utilities {
+  .text-filou-green {
+    color: var(--color-filou-green);
+  }
+  
+  .bg-filou-green {
+    background-color: var(--color-filou-green);
+  }
+  
+  .text-filou-orange {
+    color: var(--color-filou-orange);
+  }
+  
+  .bg-filou-orange {
+    background-color: var(--color-filou-orange);
+  }
+  
+  .bg-filou-orange-dark {
+    background-color: var(--color-filou-orange-dark);
+  }
+  
+  .text-filou-teal {
+    color: var(--color-filou-teal);
+  }
+  
+  .bg-filou-teal {
+    background-color: var(--color-filou-teal);
+  }
+  
+  .bg-filou-teal-dark {
+    background-color: var(--color-filou-teal-dark);
+  }
+  
+  .border-filou-teal {
+    border-color: var(--color-filou-teal);
+  }
+  
+  .from-filou-green {
+    --tw-gradient-from: var(--color-filou-green);
+    --tw-gradient-to: rgb(16 185 129 / 0);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+  
+  .to-filou-teal {
+    --tw-gradient-to: var(--color-filou-teal);
+  }
+}
+
+/* Styles globaux */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #fffcf1;
+}
+
+/* Transitions fluides */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-filou-orange);
+  outline-offset: 2px;
+}
+
+[aria-disabled='true'] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+a {
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-filou-orange);
+}
